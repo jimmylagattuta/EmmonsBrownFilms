@@ -28,7 +28,7 @@ export const brandMedia = {
 
 export const heroMedia = {
   // Paste real video URL here when ready.
-  video: "",
+  video: "https://res.cloudinary.com/djtsuktwb/video/upload/Ice_Fall_Test_2_nmhq33.mp4",
 
   // Optional later: use a frame from the video, NOT the navbar forest image.
   poster: "",

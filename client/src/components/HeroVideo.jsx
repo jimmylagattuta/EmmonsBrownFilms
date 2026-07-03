@@ -18,12 +18,15 @@ function HeroVideo() {
   return (
     <section
       id="home"
-      className="relative min-h-dvh overflow-hidden bg-black pt-24 text-center text-white"className="relative min-h-dvh overflow-hidden bg-black pt-[100px] text-center text-white sm:pt-[108px] lg:pt-[112px]"
+      className="relative min-h-dvh overflow-hidden bg-black pt-[100px] text-center text-white sm:pt-[108px] lg:pt-[112px]"
     >
       <div className="absolute inset-0">
         {loadVideo && hasVideo ? (
           <video
             className="h-full w-full object-cover object-center"
+            style={{
+              filter: "brightness(2.15) contrast(1.02) saturate(1.12)",
+            }}
             autoPlay
             muted
             loop
@@ -37,7 +40,9 @@ function HeroVideo() {
           <div className="h-full w-full bg-[radial-gradient(circle_at_center,rgba(38,64,56,0.34),transparent_34%),linear-gradient(135deg,#030505,#080b0c_45%,#000)]" />
         )}
 
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.18),rgba(0,0,0,0.82)),radial-gradient(circle_at_center,rgba(0,0,0,0.02),rgba(0,0,0,0.66))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.13),transparent_42%)]" />
+
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.00),rgba(0,0,0,0.26)),radial-gradient(circle_at_center,rgba(0,0,0,0.00),rgba(0,0,0,0.14))]" />
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100dvh-6rem)] max-w-6xl flex-col items-center justify-center px-5 py-16">
