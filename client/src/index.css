@@ -1,4 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  background: #020303;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  background: #020303;
+  color: white;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
