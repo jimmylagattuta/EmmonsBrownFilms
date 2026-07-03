@@ -28,7 +28,10 @@ function SiteHeader() {
         />
 
         {/* Main cinematic darkening */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.04),rgba(0,0,0,0.42)),linear-gradient(to_right,rgba(0,0,0,0.58),rgba(0,0,0,0.05),rgba(0,0,0,0.52))] sm:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.22),rgba(0,0,0,0.30)),linear-gradient(to_right,rgba(0,0,0,0.62),rgba(0,0,0,0.1),rgba(0,0,0,0.58))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.04),rgba(0,0,0,0.38)),linear-gradient(to_right,rgba(0,0,0,0.68),rgba(0,0,0,0.16),rgba(0,0,0,0.36))] sm:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.18),rgba(0,0,0,0.28)),linear-gradient(to_right,rgba(0,0,0,0.68),rgba(0,0,0,0.12),rgba(0,0,0,0.34))]" />
+
+        {/* Left-to-right fade: black into soft white */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.34)_28%,rgba(255,255,255,0.13)_56%,rgba(255,255,255,0.20)_100%)] sm:bg-[linear-gradient(to_right,rgba(0,0,0,0.70)_0%,rgba(0,0,0,0.28)_30%,rgba(255,255,255,0.10)_58%,rgba(255,255,255,0.16)_100%)]" />
 
         {/* Brighter oval spotlight behind the logo */}
         <div className="pointer-events-none absolute left-1/2 top-[16px] h-[104px] w-[360px] -translate-x-1/2 rounded-[999px] bg-white/24 blur-2xl sm:top-[10px] sm:h-[92px] sm:w-[430px] sm:bg-white/18 lg:top-[6px] lg:h-[92px] lg:w-[500px] lg:bg-white/16" />
@@ -37,10 +40,10 @@ function SiteHeader() {
         <div className="pointer-events-none absolute left-1/2 top-0 h-[132px] w-[520px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.24),rgba(255,255,255,0.1)_34%,transparent_72%)] sm:h-[116px] sm:w-[620px] sm:bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),rgba(255,255,255,0.07)_36%,transparent_72%)] lg:h-[108px] lg:w-[700px]" />
 
         {/* Smooth bottom fade so navbar blends into hero/video */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-black/38 to-black sm:h-20 sm:via-black/28 sm:to-black/82 lg:h-20 lg:via-black/24 lg:to-black/76" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-black/30 to-black/78 sm:h-20 sm:via-black/24 sm:to-black/64 lg:h-20 lg:via-black/20 lg:to-black/58" />
 
-        {/* Extra soft shadow right at the bottom edge */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-b from-transparent to-black/90 sm:h-8 sm:to-black/70" />
+        {/* Extra soft bottom edge */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-b from-transparent to-black/66 sm:h-8 sm:to-black/52" />
 
         <div className="relative z-10 flex h-full w-full items-start justify-between px-5 pt-10 sm:items-center sm:px-8 sm:pt-0 lg:px-14 xl:px-18">
           {/* Desktop/tablet logo */}
