@@ -47,9 +47,9 @@ function HeroVideo() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.08),rgba(0,0,0,0.34)_72%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100dvh-6rem)] max-w-6xl flex-col items-center justify-center px-5 py-16">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100dvh-6rem)] max-w-6xl flex-col items-center justify-center px-5 py-16 pb-28">
         <h1
-          className="font-display text-[3.6rem] italic leading-[0.92] tracking-wide text-white sm:text-[5.8rem] lg:text-[8rem]"
+          className="font-display text-[2.65rem] italic leading-[0.95] tracking-wide text-white sm:text-[4.15rem] lg:text-[5.6rem]"
           style={{
             textShadow:
               "0 5px 18px rgba(0,0,0,0.92), 0 2px 5px rgba(0,0,0,0.95), 0 0 34px rgba(0,0,0,0.72)",
@@ -60,7 +60,7 @@ function HeroVideo() {
         </h1>
 
         <p
-          className="mt-7 max-w-4xl font-display text-xl leading-8 text-white sm:text-3xl lg:text-4xl"
+          className="mt-6 max-w-4xl font-display text-xl leading-8 text-white sm:text-3xl lg:text-4xl"
           style={{
             textShadow:
               "0 4px 14px rgba(0,0,0,0.95), 0 2px 5px rgba(0,0,0,0.95)",
@@ -68,7 +68,9 @@ function HeroVideo() {
         >
           Story-driven films for people, brands, and moments.
         </p>
+      </div>
 
+      <div className="absolute bottom-7 left-1/2 z-20 -translate-x-1/2 sm:bottom-8 lg:bottom-10">
         <SocialLinks />
       </div>
     </section>
