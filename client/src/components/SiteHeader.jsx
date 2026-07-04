@@ -1,11 +1,35 @@
 import { useEffect, useState } from "react";
 import { brandMedia, contactInfo, navLinks, socialLinks } from "../data/siteData";
 
+const DEFAULT_DESKTOP_NAV_IMAGE_Y = 10;
+const NAV_IMAGE_STEP = 1;
+const MIN_DESKTOP_NAV_IMAGE_Y = 0;
+const MAX_DESKTOP_NAV_IMAGE_Y = 60;
+
 function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const [desktopNavImageY, setDesktopNavImageY] = useState(
+    DEFAULT_DESKTOP_NAV_IMAGE_Y
+  );
 
   function closeMenu() {
     setIsOpen(false);
+  }
+
+  function moveDesktopNavImageUp() {
+    setDesktopNavImageY((current) =>
+      Math.max(MIN_DESKTOP_NAV_IMAGE_Y, current - NAV_IMAGE_STEP)
+    );
+  }
+
+  function moveDesktopNavImageDown() {
+    setDesktopNavImageY((current) =>
+      Math.min(MAX_DESKTOP_NAV_IMAGE_Y, current + NAV_IMAGE_STEP)
+    );
+  }
+
+  function resetDesktopNavImage() {
+    setDesktopNavImageY(DEFAULT_DESKTOP_NAV_IMAGE_Y);
   }
 
   useEffect(() => {
@@ -16,13 +40,52 @@ function SiteHeader() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (window.innerWidth < 1024) return;
+
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        moveDesktopNavImageUp();
+      }
+
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        moveDesktopNavImageDown();
+      }
+
+      if (event.key.toLowerCase() === "r") {
+        resetDesktopNavImage();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <>
       <header className="fixed left-0 top-0 z-50 h-[158px] w-full overflow-hidden text-white sm:h-[118px] lg:h-[112px]">
+        {/* Mobile/tablet image: unchanged */}
         <img
           src={brandMedia.navImage}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[50%_55%] opacity-100 sm:object-[50%_42%] lg:scale-105 lg:object-[50%_10%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_55%] opacity-100 sm:object-[50%_42%] lg:hidden"
+          loading="eager"
+          fetchPriority="high"
+        />
+
+        {/* Desktop image: adjustable with up/down keys */}
+        <img
+          src={brandMedia.navImage}
+          alt=""
+          className="absolute inset-0 hidden h-full w-full object-cover opacity-100 lg:block lg:scale-105"
+          style={{
+            objectPosition: `50% ${desktopNavImageY}%`,
+          }}
           loading="eager"
           fetchPriority="high"
         />
@@ -121,6 +184,38 @@ function SiteHeader() {
           </button>
         </div>
       </header>
+
+      {/* Desktop-only subtle nav image tuner */}
+      <div className="fixed bottom-4 right-4 z-[70] hidden items-center gap-2 rounded-full border border-white/10 bg-black/35 px-3 py-2 text-[0.65rem] font-black uppercase tracking-[0.14em] text-white/55 opacity-35 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition hover:opacity-100 lg:flex">
+        <span>Nav crop {desktopNavImageY}%</span>
+
+        <button
+          type="button"
+          onClick={moveDesktopNavImageUp}
+          className="rounded-full border border-white/15 px-2 py-1 text-white/70 transition hover:border-white/35 hover:text-white"
+          aria-label="Move nav image up"
+        >
+          ↑
+        </button>
+
+        <button
+          type="button"
+          onClick={moveDesktopNavImageDown}
+          className="rounded-full border border-white/15 px-2 py-1 text-white/70 transition hover:border-white/35 hover:text-white"
+          aria-label="Move nav image down"
+        >
+          ↓
+        </button>
+
+        <button
+          type="button"
+          onClick={resetDesktopNavImage}
+          className="rounded-full border border-white/15 px-2 py-1 text-white/70 transition hover:border-white/35 hover:text-white"
+          aria-label="Reset nav image"
+        >
+          R
+        </button>
+      </div>
 
       <div
         className={`fixed inset-0 z-40 bg-[radial-gradient(circle_at_20%_20%,rgba(82,120,98,0.22),transparent_34%),linear-gradient(135deg,#070909,#111417_58%,#050606)] text-white transition duration-300 ${
