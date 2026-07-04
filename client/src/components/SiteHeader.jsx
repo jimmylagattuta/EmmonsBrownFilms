@@ -22,28 +22,28 @@ function SiteHeader() {
         <img
           src={brandMedia.navImage}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover object-[50%_55%] opacity-100 sm:object-[50%_42%] lg:object-[50%_40%]"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_55%] opacity-100 sm:object-[50%_42%] lg:scale-105 lg:object-[50%_10%]"
           loading="eager"
           fetchPriority="high"
         />
 
         {/* Main cinematic darkening */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.04),rgba(0,0,0,0.38)),linear-gradient(to_right,rgba(0,0,0,0.68),rgba(0,0,0,0.16),rgba(0,0,0,0.36))] sm:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.18),rgba(0,0,0,0.28)),linear-gradient(to_right,rgba(0,0,0,0.68),rgba(0,0,0,0.12),rgba(0,0,0,0.34))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.04),rgba(0,0,0,0.38)),linear-gradient(to_right,rgba(0,0,0,0.68),rgba(0,0,0,0.16),rgba(0,0,0,0.36))] sm:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.18),rgba(0,0,0,0.28)),linear-gradient(to_right,rgba(0,0,0,0.68),rgba(0,0,0,0.12),rgba(0,0,0,0.34))] lg:bg-[linear-gradient(to_bottom,rgba(0,0,0,0.24),rgba(0,0,0,0.50)),linear-gradient(to_right,rgba(0,0,0,0.80),rgba(0,0,0,0.34),rgba(0,0,0,0.56))]" />
 
         {/* Left-to-right fade: black into soft white */}
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.34)_28%,rgba(255,255,255,0.13)_56%,rgba(255,255,255,0.20)_100%)] sm:bg-[linear-gradient(to_right,rgba(0,0,0,0.70)_0%,rgba(0,0,0,0.28)_30%,rgba(255,255,255,0.10)_58%,rgba(255,255,255,0.16)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.34)_28%,rgba(255,255,255,0.13)_56%,rgba(255,255,255,0.20)_100%)] sm:bg-[linear-gradient(to_right,rgba(0,0,0,0.70)_0%,rgba(0,0,0,0.28)_30%,rgba(255,255,255,0.10)_58%,rgba(255,255,255,0.16)_100%)] lg:bg-[linear-gradient(to_right,rgba(0,0,0,0.80)_0%,rgba(0,0,0,0.38)_30%,rgba(255,255,255,0.08)_58%,rgba(0,0,0,0.22)_100%)]" />
 
         {/* Brighter oval spotlight behind the logo */}
-        <div className="pointer-events-none absolute left-1/2 top-[16px] h-[104px] w-[360px] -translate-x-1/2 rounded-[999px] bg-white/24 blur-2xl sm:top-[10px] sm:h-[92px] sm:w-[430px] sm:bg-white/18 lg:top-[6px] lg:h-[92px] lg:w-[500px] lg:bg-white/16" />
+        <div className="pointer-events-none absolute left-1/2 top-[16px] h-[104px] w-[360px] -translate-x-1/2 rounded-[999px] bg-white/24 blur-2xl sm:top-[10px] sm:h-[92px] sm:w-[430px] sm:bg-white/18 lg:top-[6px] lg:h-[92px] lg:w-[500px] lg:bg-white/10" />
 
         {/* Soft misty center glow */}
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[132px] w-[520px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.24),rgba(255,255,255,0.1)_34%,transparent_72%)] sm:h-[116px] sm:w-[620px] sm:bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),rgba(255,255,255,0.07)_36%,transparent_72%)] lg:h-[108px] lg:w-[700px]" />
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[132px] w-[520px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.24),rgba(255,255,255,0.1)_34%,transparent_72%)] sm:h-[116px] sm:w-[620px] sm:bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.16),rgba(255,255,255,0.07)_36%,transparent_72%)] lg:h-[108px] lg:w-[700px] lg:bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08),rgba(255,255,255,0.03)_36%,transparent_72%)]" />
 
         {/* Smooth bottom fade so navbar blends into hero/video */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-black/30 to-black/78 sm:h-20 sm:via-black/24 sm:to-black/64 lg:h-20 lg:via-black/20 lg:to-black/58" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-black/30 to-black/78 sm:h-20 sm:via-black/24 sm:to-black/64 lg:h-20 lg:via-black/24 lg:to-black/64" />
 
         {/* Extra soft bottom edge */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-b from-transparent to-black/66 sm:h-8 sm:to-black/52" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-b from-transparent to-black/66 sm:h-8 sm:to-black/52 lg:to-black/56" />
 
         <div className="relative z-10 flex h-full w-full items-start justify-between px-5 pt-10 sm:items-center sm:px-8 sm:pt-0 lg:px-14 xl:px-18">
           {/* Desktop/tablet logo */}
@@ -82,14 +82,12 @@ function SiteHeader() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="relative text-[0.76rem] font-black uppercase tracking-[0.26em] text-white/82 no-underline drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] transition duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-white/80 after:transition-all after:duration-300 hover:text-white hover:after:w-full"
+                  className="relative text-[0.76rem] font-black uppercase tracking-[0.26em] text-white/86 no-underline drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] transition duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-white/80 after:transition-all after:duration-300 hover:text-white hover:after:w-full"
                 >
                   {link.label}
                 </a>
               ))}
             </nav>
-
-            <div className="mx-8 h-8 w-px bg-white/20 xl:mx-9" />
           </div>
 
           <button
@@ -97,7 +95,7 @@ function SiteHeader() {
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             onClick={() => setIsOpen((current) => !current)}
-            className="group absolute right-5 top-[54px] flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/35 bg-black/25 shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-300 hover:border-white/55 hover:bg-white/10 sm:relative sm:right-auto sm:top-auto sm:ml-7 sm:h-[52px] sm:w-[52px] lg:ml-0 lg:h-[52px] lg:w-[52px]"
+            className="group absolute right-5 top-[54px] flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/35 bg-black/25 shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur-md transition duration-300 hover:border-white/55 hover:bg-white/10 sm:relative sm:right-auto sm:top-auto sm:ml-7 sm:h-[52px] sm:w-[52px] lg:hidden"
           >
             <span className="sr-only">
               {isOpen ? "Close menu" : "Open menu"}
